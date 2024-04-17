@@ -4,7 +4,8 @@ title:
   - MySQL优化
 subtitle:
   - 全方面讲解MySQL优化
-date: []
+date:
+  - 2024-01-03
 author: Will Wang
 header-img: img/post-bg-article.jpg
 catalog: true

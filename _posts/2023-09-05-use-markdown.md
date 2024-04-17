@@ -4,7 +4,8 @@ title:
   - Markdown的使用
 subtitle:
   - Markdown语法
-date: 
+date:
+  - 2024-01-03
 author: 范锦添
 header-img: img/post-bg-article.jpg
 catalog: true

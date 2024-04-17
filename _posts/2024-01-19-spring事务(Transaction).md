@@ -4,7 +4,8 @@ title:
   - Spring事务(Transaction)
 subtitle:
   - 七种事务传播行为及五种隔离级别
-date: 
+date:
+  - 2024-01-02
 author: 范锦添
 header-img: img/post-bg-article.jpg
 catalog: true
