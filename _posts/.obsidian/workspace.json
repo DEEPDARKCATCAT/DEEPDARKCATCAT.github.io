@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md",
-                "mode": "source",
+                "file": "启明星辰一二面.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md",
+                "file": "启明星辰一二面.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md",
+                "file": "启明星辰一二面.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md"
+                "file": "启明星辰一二面.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "8f89ab8cf225ad0c",
   "lastOpenFiles": [
+    "2024-04-11-美团二面-暑期实习.md",
+    "启明星辰一二面.md",
+    "模板.md",
     "2017-12-31-template.md",
     "2018-10-11-Technology-blog.md",
     "2023-03-03-git-flight-rules.md",
@@ -160,7 +163,6 @@
     "2023-06-12-java-base-2.md",
     "2024-01-02-quickly-build-blog.md",
     "2024-01-08-java-collection.md",
-    "2024-04-11-美团二面-暑期实习.md",
     "conflict-files-obsidian-git.md",
     "2024-02-07-Redis面试题.md",
     "2094-10-04-Architect-knowledge-map.md",
@@ -172,8 +174,6 @@
     "2019-03-01-interview-summary.md",
     "2018-12-02-mind-mapping.md",
     "2018-12-01-zhihu.md",
-    "2018-11-02-Read-Three-Kingdoms.md",
-    "2018-11-01-Read-Ali.md",
     "未命名"
   ]
 }
