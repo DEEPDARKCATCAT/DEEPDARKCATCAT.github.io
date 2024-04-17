@@ -18,8 +18,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d5c24fe6cf5c1b74",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-04-11-美团二面-暑期实习.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "30d4be64379f5fec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-04-11-美团二面-暑期实习.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "34222c04e2838689",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -85,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-04-11-美团二面-暑期实习.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -146,14 +183,34 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a1f9db23c69703bd",
+  "active": "34222c04e2838689",
   "lastOpenFiles": [
-    "模板.md",
     "2024-04-11-美团二面-暑期实习.md",
-    "2018-09-03-Redis面试题.md",
+    "conflict-files-obsidian-git.md",
+    "2024-02-07-Redis面试题.md",
+    "2024-01-08-java-collection.md",
+    "2024-01-19-spring事务(Transaction).md",
+    "2023-01-10-java-base-1.md",
+    "2094-10-04-Architect-knowledge-map.md",
     "2094-10-03-Resource-Integration.md",
-    "2018-07-25-SpringMVC的拦截器和过滤器.md",
-    "未命名",
-    "2018-02-02-windows-hot-key.md"
+    "2018-10-11-Technology-blog.md",
+    "2019-08-01-aliyun-centos7-install-mongodb.md",
+    "2019-06-02-Design-Patterns.md",
+    "2019-06-01-Design-Principles.md",
+    "2019-03-02-Reverse-interview.md",
+    "2019-03-01-interview-summary.md",
+    "2018-12-02-mind-mapping.md",
+    "2018-12-01-zhihu.md",
+    "2018-11-02-Read-Three-Kingdoms.md",
+    "2018-11-01-Read-Ali.md",
+    "2023-08-10-mysql-optimization.md",
+    "2018-10-09-Job-interpretation.md",
+    "2018-10-07-Lucene-summary.md",
+    "2018-10-05-ORM-thought-analysis.md",
+    "2018-09-05-Redis.md",
+    "2023-07-25-SpringMVC的拦截器和过滤器.md",
+    "2018-08-08-Mybatis延迟加载与缓存.md",
+    "2018-08-06-Mybatis映射文件标签总结.md",
+    "未命名"
   ]
 }

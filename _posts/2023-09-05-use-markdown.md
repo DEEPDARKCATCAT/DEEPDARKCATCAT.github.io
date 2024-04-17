@@ -1,13 +1,15 @@
 ---
-layout:     post
-title:      Markdown的使用
-subtitle:   Markdown语法
-date:       2018-01-05
-author:     Will Wang
+layout: post
+title:
+  - Markdown的使用
+subtitle:
+  - Markdown语法
+date: 
+author: 范锦添
 header-img: img/post-bg-article.jpg
 catalog: true
 tags:
-    - Markdown
+  - Markdown
 ---
 
 ### TOP
@@ -86,14 +88,6 @@ tags:
 
 <font color="green">--------------------------------------</font>
 
-欢迎来到[王志彪的GitHub主页](https://github.com/flyingwzb)
-```markdown
-欢迎来到[王志彪的GitHub主页](https://github.com/flyingwzb)
-```
-
-欢迎来到[王志彪的GitHub主页](https://github.com/flyingwzb "will wang")
-```markdown
-欢迎来到[王志彪的GitHub主页](https://github.com/flyingwzb "will wang")
 ```
 
 <font color="yellow">--------------------------------------</font>

@@ -1,13 +1,15 @@
 ---
-layout:     post
-title:      MySQL优化
-subtitle:   全方面讲解MySQL优化
-date:       2018-08-10
-author:     Will Wang
+layout: post
+title:
+  - MySQL优化
+subtitle:
+  - 全方面讲解MySQL优化
+date: []
+author: Will Wang
 header-img: img/post-bg-article.jpg
 catalog: true
 tags:
-    - MySQL
+  - MySQL
 ---
 
 # MySQL 优化
@@ -15,87 +17,6 @@ tags:
 
 - 下面说的优化基于 MySQL 5.6，理论上 5.5 之后的都算适用，具体还是要看官网
 
-
-## 优秀材料
-
-- <https://notes.diguage.com/mysql/>
-- <https://mp.weixin.qq.com/s/Wc6Gw6S5xMy2DhTCrogxVQ>
-
-
-## 服务状态查询
-
-- 查看当前数据库的状态，常用的有：
-	- 查看系统状态：`SHOW STATUS;`
-	- 查看刚刚执行 SQL 是否有警告信息：`SHOW WARNINGS;`
-	- 查看刚刚执行 SQL 是否有错误信息：`SHOW ERRORS;`
-	- 查看已经连接的所有线程状况：`SHOW FULL PROCESSLIST;`
-	    - 输出参数说明：<http://www.ibloger.net/article/2519.html>
-	    - 可以结束某些连接：`kill id值`
-	- 查看当前连接数量：`SHOW STATUS LIKE 'max_used_connections';`
-	- 查看变量，在 my.cnf 中配置的变量会在这里显示：`SHOW VARIABLES;`
-	- 查询慢 SQL 配置：`show variables like 'slow%';`
-	    - 开启慢 SQL：`set global slow_query_log='ON'`
-    - 查询慢 SQL 秒数值：` show variables like 'long%';`
-        - 调整秒速值：`set long_query_time=1;`
-	- 查看当前MySQL 中已经记录了多少条慢查询，前提是配置文件中开启慢查询记录了.
-		- `SHOW STATUS LIKE '%slow_queries%';`
-	- 查询当前MySQL中查询、更新、删除执行多少条了，可以通过这个来判断系统是侧重于读还是侧重于写，如果是写要考虑使用读写分离。
-		- `SHOW STATUS LIKE '%Com_select%';`
-		- `SHOW STATUS LIKE '%Com_insert%';`
-		- `SHOW STATUS LIKE '%Com_update%';`
-		- `SHOW STATUS LIKE '%Com_delete%';`
-	- 如果 rollback 过多，说明程序肯定哪里存在问题
-		- `SHOW STATUS LIKE '%Com_rollback%';`
-	- 显示MySQL服务启动运行了多少时间，如果MySQL服务重启，该时间重新计算，单位秒
-		- `SHOW STATUS LIKE 'uptime';`
-	- 显示查询缓存的状态情况
-		- `SHOW STATUS LIKE 'qcache%';`
-		- PS.下面的解释，我目前不肯定是对，还要再找下资料：
-			- <http://dba.stackexchange.com/questions/33811/qcache-free-memory-not-full-yet-i-get-alot-of-qcache-lowmem-prunes>
-			- <https://dev.mysql.com/doc/refman/5.7/en/query-cache-status-and-maintenance.html>
-			- <https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html>
-			- <http://www.111cn.net/database/110/c0c88da67b9e0c6c8fabfbcd6c733523.htm>
-		- 1. Qcache_free_blocks，缓存中相邻内存块的个数。数目大说明可能有碎片。如果数目比较大，可以执行： `flush query cache;` 对缓存中的碎片进行整理，从而得到一个空闲块。 
-		- 2. Qcache_free_memory，缓存中的空闲内存大小。如果 Qcache_free_blocks 比较大，说明碎片严重。 如果 Qcache_free_memory 很小，说明缓存不够用了。 
-		- 3. Qcache_hits，每次查询在缓存中命中时就增大该值。 
-		- 4. Qcache_inserts，每次查询，如果没有从缓存中找到数据，这里会增大该值
-		- 5. Qcache_lowmem_prunes，因内存不足删除缓存次数，缓存出现内存不足并且必须要进行清理, 以便为更多查询提供空间的次数。返个数字最好长时间来看；如果返个数字在不断增长，就表示可能碎片非常严重，或者缓存内存很少。 
-		- 6. Qcache_not_cached # 没有进行缓存的查询的数量，通常是这些查询未被缓存或其类型不允许被缓存
-		- 7. Qcache_queries_in_cache # 在当前缓存的查询（和响应）的数量。 
-		- 8. Qcache_total_blocks #缓存中块的数量。
-- 查询哪些表在被使用，是否有锁表：`SHOW OPEN TABLES WHERE In_use > 0;`
-- 查询 innodb 状态（输出内容很多）：`SHOW ENGINE INNODB STATUS;`
-- 锁性能状态：`SHOW STATUS LIKE  'innodb_row_lock_%';`
-    - Innodb_row_lock_current_waits：当前等待锁的数量
-    - Innodb_row_lock_time：系统启动到现在、锁定的总时间长度
-    - Innodb_row_lock_time_avg：每次平均锁定的时间
-    - Innodb_row_lock_time_max：最长一次锁定时间
-    - Innodb_row_lock_waits：系统启动到现在、总共锁定次数
-- 帮我们分析表，并提出建议：`select * from my_table procedure analyse();`
-
-
-## 系统表
-
-- 当前运行的所有事务：`select * from information_schema.INNODB_TRX;`
-- 当前事务出现的锁：`select * from information_schema.INNODB_LOCKS;`
-- 锁等待的对应关系：`select * from information_schema.INNODB_LOCK_WAITS;`
-
-
-## otpimizer trace
-
-- 作用：输入我们想要查看优化过程的查询语句，当该查询语句执行完成后，就可以到 information_schema 数据库下的OPTIMIZER_TRACE表中查看 mysql 自己帮我们的完整优化过程
-- 是否打开（默认都是关闭）：`SHOW VARIABLES LIKE 'optimizer_trace';`
-    - one_line的值是控制输出格式的，如果为on那么所有输出都将在一行中展示，不适合人阅读，所以我们就保持其默认值为off吧。
-- 打开配置：`SET optimizer_trace="enabled=on";`
-- 关闭配置：`SET optimizer_trace="enabled=off";`
-- 查询优化结果：`SELECT * FROM information_schema.OPTIMIZER_TRACE;`
-
-```
-我们所说的基于成本的优化主要集中在optimize阶段，对于单表查询来说，我们主要关注optimize阶段的"rows_estimation"这个过程，这个过程深入分析了对单表查询的各种执行方案的成本；
-对于多表连接查询来说，我们更多需要关注"considered_execution_plans"这个过程，这个过程里会写明各种不同的连接方式所对应的成本。
-反正优化器最终会选择成本最低的那种方案来作为最终的执行计划，也就是我们使用EXPLAIN语句所展现出的那种方案。
-如果有小伙伴对使用EXPLAIN语句展示出的对某个查询的执行计划很不理解，大家可以尝试使用optimizer trace功能来详细了解每一种执行方案对应的成本，相信这个功能能让大家更深入的了解MySQL查询优化器。
-```
 
 
 ## 查询优化(EXPLAIN 查看执行计划)
@@ -291,13 +212,3 @@ select * from table for update;
 要想修改就必须等所有共享锁都释放完之后。语法为：
 select * from table lock in share mode;
 
-
-## 资料
-
-- <https://my.oschina.net/jsan/blog/653697>
-- <https://blog.imdst.com/mysql-5-6-pei-zhi-you-hua/>
-- <https://mp.weixin.qq.com/s/qCRfxIr1RoHd9i8-Hk8iuQ>
-- <https://yancg.cn/detail?id=3>
-- <https://www.jianshu.com/p/1ab3cd5551b9>
-- <http://blog.brucefeng.info/post/mysql-index-query?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io>
-- <https://juejin.im/book/5bffcbc9f265da614b11b731>
