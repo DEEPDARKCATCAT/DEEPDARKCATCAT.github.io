@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-01-10-java-base-1 1.md",
+                "file": "2023-06-12-java-base-2 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-01-10-java-base-1 1.md",
+                "file": "2023-06-12-java-base-2 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-01-10-java-base-1 1.md",
+                "file": "2023-06-12-java-base-2 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-01-10-java-base-1 1.md"
+                "file": "2023-06-12-java-base-2 1.md"
               }
             }
           }
@@ -148,8 +148,10 @@
   },
   "active": "8f89ab8cf225ad0c",
   "lastOpenFiles": [
-    "2023-01-10-java-base-1.md",
+    "2023-06-12-java-base-2.md",
+    "2023-06-12-java-base-2 1.md",
     "2023-01-10-java-base-1 1.md",
+    "2023-01-10-java-base-1.md",
     "2023-11-11--延迟队列的实现.md",
     "2024-04-12-实习收获-单元测试.md",
     "2024-04-12-蚂蚁一面-暑期实习.md",
@@ -161,7 +163,6 @@
     "2024-03-23-启明星辰日常实习一二面.md",
     "2024-04-11-美团二面-暑期实习.md",
     "2024-04-12-快手二面-暑期实习.md",
-    "2023-06-12-java-base-2.md",
     "2023-07-21-Spring的核心模块解析.md",
     "2023-07-25-SpringMVC的拦截器和过滤器.md",
     "2023-08-10-mysql-optimization.md",
@@ -174,7 +175,6 @@
     "2018-10-11-Technology-blog.md",
     "conflict-files-obsidian-git.md",
     "2024-02-07-Redis面试题.md",
-    "2094-10-04-Architect-knowledge-map.md",
     "未命名"
   ]
 }
