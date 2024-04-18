@@ -4,8 +4,7 @@ title:
   - Git飞行规则(Flight Rules)
 subtitle:
   - 这是一篇给宇航员（这里就是指使用Git的程序员们）的指南，用来指导问题出现后的应对之法。
-date:
-  - 2024-01-03
+date: 2023-09-02
 author: 范锦添
 header-img: img/post-bg-article.jpg
 catalog: true

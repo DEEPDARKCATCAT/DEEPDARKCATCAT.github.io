@@ -4,8 +4,7 @@ title:
   - Java集合体系
 subtitle:
   - Java集合体系分类与关系
-date:
-  - 2024-01-03
+date: 2023-10-14
 author: 范锦添
 header-img: img/post-bg-article.jpg
 catalog: true
